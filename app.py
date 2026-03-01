@@ -15,12 +15,12 @@ st.set_page_config(page_title="ระบบยืม-คืนหนังสื
 
 
 # =========================
-# 🌸 Princess Theme (Safe Version - No Error)
+# 🌸 Princess Theme + Hide Auto Menu
 # =========================
 st.markdown("""
 <style>
 
-/* ===== ซ่อน Multi-page Auto Navigation ===== */
+/* ===== ซ่อน Multi-page Auto Navigation (ที่เป็น admin page / book page) ===== */
 section[data-testid="stSidebarNav"] {
     display: none !important;
 }
@@ -41,7 +41,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== Sidebar ===== */
+/* ===== Sidebar สวยขึ้น ===== */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #ffffff, #ffe6f2);
     border-right: 2px solid #ffb3ec;
