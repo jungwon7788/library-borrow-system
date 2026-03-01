@@ -5,18 +5,6 @@ import controller
 def render_login():
     st.title("🔐 เข้าสู่ระบบ")
 
-    # 👇 เพิ่มตรงนี้
-    st.markdown(
-        """
-        <div style='text-align: center; font-size: 14px; color: gray;'>
-        ชลธิชา สูนย์มาตย์ <br>
-        6740259102 <br>
-        ว.6706
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
     with st.form("login_form"):
         username = st.text_input("ชื่อผู้ใช้", placeholder="เช่น admin")
         password = st.text_input(
@@ -25,6 +13,18 @@ def render_login():
             placeholder="เช่น 1234"
         )
         submitted = st.form_submit_button("Login")
+
+        # 👇 ใส่ตรงนี้ (อยู่ใน form)
+        st.markdown(
+            """
+            <div style='text-align: center; font-size: 13px; color: gray; margin-top:20px;'>
+            ชลธิชา สูนย์มาตย์ <br>
+            6740259102 <br>
+            ว.6706
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     if submitted:
         ok, msgs, user_info = controller.login(username, password)
