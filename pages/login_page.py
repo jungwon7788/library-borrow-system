@@ -6,28 +6,31 @@ import controller
 def render_login():
     st.title("🔐 เข้าสู่ระบบ")
 
-    # ===== เพิ่มข้อมูลผู้จัดทำ =====
+    # ===== ข้อมูลผู้จัดทำ =====
     st.markdown("""
-    <div style=' margin-bottom:20px;'>
+    <div style="text-align:center; margin-bottom:20px;">
         <h4>ข้อมูลผู้จัดทำ</h4>
-        <p style='font-size:16px; font-weight:bold;'>
-            นางสาว ชลธิชา สูนย์มาตย์<br>
+        <p style="font-size:16px; font-weight:bold; color:#6a1b9a;">
+            ชลธิชา สูนย์มาตย์<br>
             6740259102<br>
             ว.6706
         </p>
     </div>
     """, unsafe_allow_html=True)
 
+    # ===== ฟอร์ม Login =====
     with st.form("login_form"):
         username = st.text_input(
             "ชื่อผู้ใช้",
             placeholder="เช่น admin"
         )
+
         password = st.text_input(
             "รหัสผ่าน",
             type="password",
             placeholder="เช่น 1234"
         )
+
         submitted = st.form_submit_button("Login")
 
     if submitted:
