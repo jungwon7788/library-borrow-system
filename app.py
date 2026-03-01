@@ -19,18 +19,13 @@ st.set_page_config(
 
 
 # =========================
-# 🌸 Princess Theme + Hide White Menu
+# 🌸 Princess Theme + Hide White Menu Only
 # =========================
 st.markdown("""
 <style>
 
-/* ===== ซ่อนเมนู Multi-page สีขาว ===== */
-div[data-testid="stSidebarNav"] {
-    display: none !important;
-}
-
-/* ===== ซ่อนคำว่า app ด้านบน ===== */
-div[data-testid="stSidebarNav"] + div {
+/* ===== ซ่อน Multi-page เมนูสีขาว ===== */
+section[data-testid="stSidebarNav"] {
     display: none !important;
 }
 
@@ -50,13 +45,13 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== Sidebar ของเรา ===== */
+/* ===== Sidebar ของเรา (ชมพูสวย ๆ) ===== */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #ffffff, #ffe6f2);
     border-right: 2px solid #ffb3ec;
 }
 
-/* ===== ปุ่มเมนูชมพู ===== */
+/* ===== ปุ่มเมนู ===== */
 .stSidebar button {
     border-radius: 25px !important;
     border: none !important;
@@ -72,7 +67,7 @@ section[data-testid="stSidebar"] {
     background: linear-gradient(90deg,#ff4da6,#b5179e) !important;
 }
 
-/* ===== การ์ด Form ===== */
+/* ===== Form Card ===== */
 div[data-testid="stForm"] {
     background: white;
     padding: 25px;
@@ -122,7 +117,7 @@ st.write("ตัวอย่าง Web App เชื่อมฐานข้อ�
 
 
 # =========================
-# Sidebar User Info
+# Sidebar User Info (อันนี้เก็บไว้)
 # =========================
 user = st.session_state.get("user") or {}
 
