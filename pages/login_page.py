@@ -5,7 +5,6 @@ import controller
 
 def render_login():
     st.title("🔐 เข้าสู่ระบบ")
-    st.write("ทดสอบ")
 
     # ===== ข้อมูลผู้จัดทำ =====
     st.markdown("""
@@ -48,4 +47,5 @@ def render_login():
             st.session_state["user"] = user_info
             st.session_state["page"] = "books"
             st.rerun()
+
 
