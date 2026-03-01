@@ -6,10 +6,9 @@ import controller
 def render_login():
     st.title("🔐 เข้าสู่ระบบ")
 
-    # ===== ข้อมูลผู้จัดทำ =====
+    # ===== ชื่อ / รหัส / หมู่เรียน =====
     st.markdown("""
     <div style="text-align:center; margin-bottom:20px;">
-        <h4>ข้อมูลผู้จัดทำ</h4>
         <p style="font-size:16px; font-weight:bold; color:#6a1b9a;">
             ชลธิชา สูนย์มาตย์<br>
             6740259102<br>
@@ -47,5 +46,3 @@ def render_login():
             st.session_state["user"] = user_info
             st.session_state["page"] = "books"
             st.rerun()
-
-
