@@ -11,17 +11,26 @@ from pages import login_page
 # =========================
 # Page Config
 # =========================
-st.set_page_config(page_title="ระบบยืม-คืนหนังสือ", page_icon="📚")
+st.set_page_config(
+    page_title="ระบบยืม-คืนหนังสือ",
+    page_icon="📚",
+    layout="wide"
+)
 
 
 # =========================
-# 🌸 Princess Theme + Hide Auto Menu
+# 🌸 Princess Theme + Hide White Menu
 # =========================
 st.markdown("""
 <style>
 
-/* ===== ซ่อน Multi-page Auto Navigation (ที่เป็น admin page / book page) ===== */
-section[data-testid="stSidebarNav"] {
+/* ===== ซ่อนเมนู Multi-page สีขาว ===== */
+div[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+/* ===== ซ่อนคำว่า app ด้านบน ===== */
+div[data-testid="stSidebarNav"] + div {
     display: none !important;
 }
 
@@ -31,7 +40,7 @@ section[data-testid="stSidebarNav"] {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== หัวข้อหลักไล่สี ===== */
+/* ===== หัวข้อหลัก ===== */
 h1 {
     text-align: center;
     font-weight: 900;
@@ -41,19 +50,20 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== Sidebar สวยขึ้น ===== */
+/* ===== Sidebar ของเรา ===== */
 section[data-testid="stSidebar"] {
     background: linear-gradient(180deg, #ffffff, #ffe6f2);
     border-right: 2px solid #ffb3ec;
 }
 
-/* ===== ปุ่มเมนู ===== */
+/* ===== ปุ่มเมนูชมพู ===== */
 .stSidebar button {
-    border-radius: 20px !important;
+    border-radius: 25px !important;
     border: none !important;
     background: linear-gradient(90deg,#ff66c4,#c77dff) !important;
     color: white !important;
     font-weight: bold !important;
+    padding: 10px 0px !important;
     transition: 0.3s ease;
 }
 
@@ -62,7 +72,7 @@ section[data-testid="stSidebar"] {
     background: linear-gradient(90deg,#ff4da6,#b5179e) !important;
 }
 
-/* ===== Form Card ===== */
+/* ===== การ์ด Form ===== */
 div[data-testid="stForm"] {
     background: white;
     padding: 25px;
@@ -115,6 +125,7 @@ st.write("ตัวอย่าง Web App เชื่อมฐานข้อ�
 # Sidebar User Info
 # =========================
 user = st.session_state.get("user") or {}
+
 st.sidebar.markdown(f"👤 ผู้ใช้: **{user.get('username','-')}**")
 st.sidebar.markdown(f"🔑 บทบาท: **{user.get('role','-')}**")
 
